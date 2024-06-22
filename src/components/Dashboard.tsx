@@ -1,3 +1,4 @@
+// src/components/Dashboard.tsx
 import React, { useEffect, useState } from 'react';
 import { getOrders, Order } from '../api/orders';
 
@@ -6,15 +7,16 @@ const Dashboard: React.FC = () => {
 
   useEffect(() => {
     const fetchOrders = async () => {
-      const data = await getOrders();
-      setOrders(data);
+      const ordersData = await getOrders();
+      setOrders(ordersData);
     };
+
     fetchOrders();
   }, []);
 
   return (
-    <div className="p-4">
-      <h1 className="text-2xl font-bold mb-4">Panel de Control</h1>
+    <div>
+      <h1>Dashboard</h1>
       <ul>
         {orders.map(order => (
           <li key={order.id}>
