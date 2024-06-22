@@ -1,4 +1,3 @@
-// src/components/OrderForm.tsx
 import React, { useState } from 'react';
 import { createOrder, Order } from '../api/orders';
 
@@ -10,10 +9,14 @@ const OrderForm: React.FC = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     const newOrder: Omit<Order, 'id'> = { customerName, productName, quantity };
-    await createOrder(newOrder);
-    setCustomerName('');
-    setProductName('');
-    setQuantity(1);
+    try {
+      await createOrder(newOrder);
+      setCustomerName('');
+      setProductName('');
+      setQuantity(1);
+    } catch (error) {
+      console.error('Error al crear el pedido:', error);
+    }
   };
 
   return (
