@@ -8,6 +8,7 @@ export interface Order {
   quantity: number;
 }
 
+// Configuración de Axios con la URL base directa
 const api = axios.create({
   baseURL: 'https://shielded-beach-37267.herokuapp.com', // URL base directa
 });
