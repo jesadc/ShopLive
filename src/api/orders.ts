@@ -1,4 +1,3 @@
-// src/api/orders.ts
 import axios from 'axios';
 
 // Define el tipo Order
