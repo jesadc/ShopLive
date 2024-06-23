@@ -9,7 +9,7 @@ export interface Order {
 }
 
 const api = axios.create({
-  baseURL: process.env.REACT_APP_API_URL,
+  baseURL: 'https://shielded-beach-37267.herokuapp.com', // URL base directa
 });
 
 export const getOrders = async () => {
